@@ -10,8 +10,17 @@ namespace CowboyCafe.Data
     /// <summary>
     /// this class emulates the Dakota Double Burger entree
     /// </summary>
-    public class DakotaDoubleBurger
+    public class DakotaDoubleBurger: Entree
     {
+        /// <summary>
+        /// basic constructor, initializes price and calories
+        /// </summary>
+        public DakotaDoubleBurger()
+        {
+            Price = 5.20;
+            Calories = 464;
+        }
+
         /// <summary>
         /// boolean representing if the entree has a bun
         /// </summary>
@@ -53,25 +62,9 @@ namespace CowboyCafe.Data
         public bool Mayo { get; set; } = true;
 
         /// <summary>
-        /// a double representing the price of the entree
-        /// </summary>
-        public double Price
-        {
-            get { return 5.20; }
-        }
-
-        /// <summary>
-        /// a uint representing the calorie count of the entree
-        /// </summary>
-        public uint Calories
-        {
-            get { return 464; }
-        }
-
-        /// <summary>
         /// a list of all the special instructions needed to prepare the entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

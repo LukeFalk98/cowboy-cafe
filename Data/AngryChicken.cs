@@ -10,8 +10,17 @@ namespace CowboyCafe.Data
     /// <summary>
     /// this class emulates the Angry Chicken entree
     /// </summary>
-    public class AngryChicken
+    public class AngryChicken: Entree
     {
+        /// <summary>
+        /// general constructer, initializes price and calories
+        /// </summary>
+        public AngryChicken()
+        {
+            Price = 5.99;
+            Calories = 190;
+        }
+
         private bool bread = true;
         /// <summary>
         /// boolean representing if the entree has bread
@@ -33,31 +42,9 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// a double representing the price of the entree
-        /// </summary>
-        public double Price
-        {
-            get
-            {
-                return 5.99;
-            }
-        }
-
-        /// <summary>
-        /// a uint representing the calorie count of the entree
-        /// </summary>
-        public uint Calories
-        {
-            get
-            {
-                return 190;
-            }
-        }
-
-        /// <summary>
         /// a list of the special instructions needed to prepare the entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -10,8 +10,17 @@ namespace CowboyCafe.Data
     /// <summary>
     /// This class represents the Trail Burger entree.
     /// </summary>
-    public class TrailBurger
+    public class TrailBurger: Entree
     {
+        /// <summary>
+        /// basic constructor, initializes Price and Calories
+        /// </summary>
+        public TrailBurger()
+        {
+            Price = 4.50;
+            Calories = 288;
+        }
+
         /// <summary>
         /// boolean representing if the entree has a bun
         /// </summary>
@@ -38,25 +47,9 @@ namespace CowboyCafe.Data
         public bool Cheese { get; set; } = true;
 
         /// <summary>
-        /// A double that is the price of the entree
-        /// </summary>
-        public double Price
-        {
-            get { return 4.50; }
-        }
-
-        /// <summary>
-        /// a uint that is the calories of the entree
-        /// </summary>
-        public uint Calories
-        {
-            get { return 288; }
-        }
-
-        /// <summary>
         /// a list of all the special instructions to prepare the entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

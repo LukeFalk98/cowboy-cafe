@@ -10,34 +10,21 @@ namespace CowboyCafe.Data
     /// <summary>
     /// this class simulates the Rustler's Ribs entree
     /// </summary>
-    public class RustlersRibs
+    public class RustlersRibs: Entree
     {
         /// <summary>
-        /// This double is the price of the entree
+        /// basic constructor, initializes the Price and Calories
         /// </summary>
-        public double Price
+        public RustlersRibs()
         {
-            get
-            {
-                return 7.50;
-            }
-        }
-
-        /// <summary>
-        /// this uint is the calorie count of the entree
-        /// </summary>
-        public uint Calories
-        {
-            get
-            {
-                return 894;
-            }
+            Price = 7.50;
+            Calories = 894;
         }
 
         /// <summary>
         /// this is a list of all the special instructions needed to prepare the entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

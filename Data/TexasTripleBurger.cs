@@ -10,8 +10,17 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class that represents the Texas Triple Burger entree
     /// </summary>
-    public class TexasTripleBurger
+    public class TexasTripleBurger: Entree
     {
+        /// <summary>
+        /// basic constructor, initializes Price and Calories
+        /// </summary>
+        public TexasTripleBurger()
+        {
+            Price = 6.45;
+            Calories = 698;
+        }
+
         /// <summary>
         /// boolean representing if the entree has a bun
         /// </summary>
@@ -63,25 +72,9 @@ namespace CowboyCafe.Data
         public bool Egg { get; set; } = true;
 
         /// <summary>
-        /// double that is the price of the entree
-        /// </summary>
-        public double Price
-        {
-            get { return 6.45; }
-        }
-
-        /// <summary>
-        /// uint that is the calorie count of the entree
-        /// </summary>
-        public uint Calories
-        {
-            get { return 698; }
-        }
-
-        /// <summary>
         /// a List of all the special instructions needed to build this entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

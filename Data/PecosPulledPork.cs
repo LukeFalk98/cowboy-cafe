@@ -10,8 +10,17 @@ namespace CowboyCafe.Data
     /// <summary>
     /// this class emulates the Pecos Pulled Pork entree
     /// </summary>
-    public class PecosPulledPork
+    public class PecosPulledPork: Entree
     {
+        /// <summary>
+        /// basic constructor, initializes Price and Calories
+        /// </summary>
+        public PecosPulledPork()
+        {
+            Price = 5.88;
+            Calories = 528;
+        }
+
         private bool bread = true;
         /// <summary>
         /// boolean representing if the entree has bread
@@ -33,31 +42,9 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// a double representing the price of the entree
-        /// </summary>
-        public double Price
-        {
-            get
-            {
-                return 5.88;
-            }
-        }
-
-        /// <summary>
-        /// a uint representing the calorie count of the entree
-        /// </summary>
-        public uint Calories
-        {
-            get
-            {
-                return 528;
-            }
-        }
-
-        /// <summary>
         /// a list of all the special instructions needed to prepare this entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
