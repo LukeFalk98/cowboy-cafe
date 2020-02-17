@@ -1,11 +1,20 @@
 ﻿using System;
+// JerkedSoda.cs
+// Author: Luke Falk
+
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// this class represents the Soda Drink
+    /// </summary>
     public class JerkedSoda : Drink
     {
+        /// <summary>
+        /// this returns the price based on size
+        /// </summary>
         public override double Price
         {
             get
@@ -24,6 +33,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// this returns the calorie count based on size
+        /// </summary>
         public override uint Calories
         {
             get
@@ -42,8 +54,14 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// this is the flavor of soda
+        /// </summary>
         public SodaFlavor Flavor { get; set; }
 
+        /// <summary>
+        /// this gives the instructions for serving
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get
