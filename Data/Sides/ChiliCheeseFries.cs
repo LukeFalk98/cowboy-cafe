@@ -1,4 +1,4 @@
-﻿// CornDodgers.cs
+﻿// ChiliCheeseFries.cs
 // Author: Luke Falk
 
 using System;
@@ -8,9 +8,9 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// This class emulates the Corn Dodgers side
+    /// this class emulates a side of Chili Cheese Fries
     /// </summary>
-    public class CornDodgers: Side
+    public class ChiliCheeseFries : Side
     {
         /// <summary>
         /// this gives the price dependent of the size of the side
@@ -22,13 +22,13 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case (Size.Large):
-                        return 1.99;
+                        return 3.99;
                     case (Size.Medium):
-                        return 1.79;
+                        return 2.99;
                     case (Size.Small):
-                        return 1.59;
+                        return 1.99;
                     default:
-                        throw new NotImplementedException("Size Not Recognized.");
+                        throw new NotImplementedException("Size Not Recognized");
                 }
             }
         }
@@ -43,15 +43,24 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case (Size.Large):
-                        return 717;
+                        return 610;
                     case (Size.Medium):
-                        return 685;
+                        return 524;
                     case (Size.Small):
-                        return 512;
+                        return 433;
                     default:
                         throw new NotImplementedException("Size Not Recognized.");
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns the object as a string
+        /// </summary>
+        /// <returns>"Chili Cheese Fries"</returns>
+        public override string ToString()
+        {
+            return "Chili Cheese Fries";
         }
     }
 }

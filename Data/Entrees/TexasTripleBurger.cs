@@ -1,4 +1,4 @@
-﻿// DakotaDoubleBurger.cs
+﻿// TexasTripleBurger.cs
 // Author: Luke Falk
 
 using System;
@@ -8,17 +8,17 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// this class emulates the Dakota Double Burger entree
+    /// A class that represents the Texas Triple Burger entree
     /// </summary>
-    public class DakotaDoubleBurger: Entree
+    public class TexasTripleBurger: Entree
     {
         /// <summary>
-        /// basic constructor, initializes price and calories
+        /// basic constructor, initializes Price and Calories
         /// </summary>
-        public DakotaDoubleBurger()
+        public TexasTripleBurger()
         {
-            Price = 5.20;
-            Calories = 464;
+            Price = 6.45;
+            Calories = 698;
         }
 
         /// <summary>
@@ -62,7 +62,17 @@ namespace CowboyCafe.Data
         public bool Mayo { get; set; } = true;
 
         /// <summary>
-        /// a list of all the special instructions needed to prepare the entree
+        /// boolean representing if the entree has bacon
+        /// </summary>
+        public bool Bacon { get; set; } = true;
+
+        /// <summary>
+        /// boolean representing if the entree has egg
+        /// </summary>
+        public bool Egg { get; set; } = true;
+
+        /// <summary>
+        /// a List of all the special instructions needed to build this entree
         /// </summary>
         public override List<string> SpecialInstructions
         {
@@ -78,9 +88,20 @@ namespace CowboyCafe.Data
                 if (!Tomato) instructions.Add("hold tomato");
                 if (!Lettuce) instructions.Add("hold lettuce");
                 if (!Mayo) instructions.Add("hold mayo");
+                if (!Bacon) instructions.Add("hold bacon");
+                if (!Egg) instructions.Add("hold egg");
 
                 return instructions;
             }
+        }
+
+        /// <summary>
+        /// Returns the object as a string
+        /// </summary>
+        /// <returns>"Texas Triple Burger"</returns>
+        public override string ToString()
+        {
+            return "Texas Triple Burger";
         }
     }
 }

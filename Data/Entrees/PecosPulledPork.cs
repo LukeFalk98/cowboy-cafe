@@ -1,4 +1,4 @@
-﻿// AngryChicken.cs
+﻿// PecosPulledPork.cs
 // Author: Luke Falk
 
 using System;
@@ -8,17 +8,17 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// this class emulates the Angry Chicken entree
+    /// this class emulates the Pecos Pulled Pork entree
     /// </summary>
-    public class AngryChicken: Entree
+    public class PecosPulledPork: Entree
     {
         /// <summary>
-        /// general constructer, initializes price and calories
+        /// basic constructor, initializes Price and Calories
         /// </summary>
-        public AngryChicken()
+        public PecosPulledPork()
         {
-            Price = 5.99;
-            Calories = 190;
+            Price = 5.88;
+            Calories = 528;
         }
 
         private bool bread = true;
@@ -42,7 +42,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// a list of the special instructions needed to prepare the entree
+        /// a list of all the special instructions needed to prepare this entree
         /// </summary>
         public override List<string> SpecialInstructions
         {
@@ -55,6 +55,15 @@ namespace CowboyCafe.Data
 
                 return instructions;
             }
+        }
+
+        /// <summary>
+        /// Returns the object as a string
+        /// </summary>
+        /// <returns>"Peco's Pulled Pork"</returns>
+        public override string ToString()
+        {
+            return "Peco's Pulled Pork";
         }
     }
 }

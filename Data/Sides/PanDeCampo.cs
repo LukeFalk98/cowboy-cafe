@@ -1,4 +1,4 @@
-﻿// ChiliCheeseFries.cs
+﻿// PanDeCampo.cs
 // Author: Luke Falk
 
 using System;
@@ -8,12 +8,12 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// this class emulates a side of Chili Cheese Fries
+    /// this class emulates the Pan de Campo side
     /// </summary>
-    public class ChiliCheeseFries : Side
+    public class PanDeCampo : Side
     {
         /// <summary>
-        /// this gives the price dependent of the size of the side
+        /// this gives the price of the side based on size
         /// </summary>
         public override double Price
         {
@@ -22,11 +22,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case (Size.Large):
-                        return 3.99;
-                    case (Size.Medium):
-                        return 2.99;
-                    case (Size.Small):
                         return 1.99;
+                    case (Size.Medium):
+                        return 1.79;
+                    case (Size.Small):
+                        return 1.59;
                     default:
                         throw new NotImplementedException("Size Not Recognized");
                 }
@@ -34,7 +34,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// this gives the calorie count dependent of the size of the side
+        /// this gives the calorie count of the side based on size
         /// </summary>
         public override uint Calories
         {
@@ -43,15 +43,24 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case (Size.Large):
-                        return 610;
+                        return 367;
                     case (Size.Medium):
-                        return 524;
+                        return 269;
                     case (Size.Small):
-                        return 433;
+                        return 227;
                     default:
-                        throw new NotImplementedException("Size Not Recognized.");
+                        throw new NotImplementedException("Size Not Recognized");
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns the object as a string
+        /// </summary>
+        /// <returns>"Pan de Campo"</returns>
+        public override string ToString()
+        {
+            return "Pan de Campo";
         }
     }
 }

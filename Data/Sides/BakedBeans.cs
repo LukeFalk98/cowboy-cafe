@@ -53,5 +53,14 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Returns the object as a string
+        /// </summary>
+        /// <returns>"Baked Beans"</returns>
+        public override string ToString()
+        {
+            return "Baked Beans";
+        }
     }
 }

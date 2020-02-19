@@ -1,4 +1,4 @@
-﻿// PanDeCampo.cs
+﻿// CornDodgers.cs
 // Author: Luke Falk
 
 using System;
@@ -8,12 +8,12 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// this class emulates the Pan de Campo side
+    /// This class emulates the Corn Dodgers side
     /// </summary>
-    public class PanDeCampo : Side
+    public class CornDodgers: Side
     {
         /// <summary>
-        /// this gives the price of the side based on size
+        /// this gives the price dependent of the size of the side
         /// </summary>
         public override double Price
         {
@@ -28,13 +28,13 @@ namespace CowboyCafe.Data
                     case (Size.Small):
                         return 1.59;
                     default:
-                        throw new NotImplementedException("Size Not Recognized");
+                        throw new NotImplementedException("Size Not Recognized.");
                 }
             }
         }
 
         /// <summary>
-        /// this gives the calorie count of the side based on size
+        /// this gives the calorie count dependent of the size of the side
         /// </summary>
         public override uint Calories
         {
@@ -43,15 +43,24 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case (Size.Large):
-                        return 367;
+                        return 717;
                     case (Size.Medium):
-                        return 269;
+                        return 685;
                     case (Size.Small):
-                        return 227;
+                        return 512;
                     default:
-                        throw new NotImplementedException("Size Not Recognized");
+                        throw new NotImplementedException("Size Not Recognized.");
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns the object as a string
+        /// </summary>
+        /// <returns>"Corn Dodgers"</returns>
+        public override string ToString()
+        {
+            return "Corn Dodgers";
         }
     }
 }
