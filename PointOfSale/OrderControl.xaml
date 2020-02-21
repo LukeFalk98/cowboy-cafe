@@ -33,6 +33,18 @@
                 Content="Peco's Pulled Pork"
                 Click="PecosPulledPorkButton_Click">
             </Button>
+            <Button x:Name="RustlersRibsButton" Height="30"
+                Content="Rustler's Ribs"
+                Click="RustlersRibsButton_Click">
+            </Button>
+            <Button x:Name="TexasTripleBurgerButton" Height="30"
+                Content="Texas Triple Burger"
+                Click="TexasTripleBurgerButton_Click">
+            </Button>
+            <Button x:Name="TrailBurgerButton" Height="30"
+                Content="Trail Burger"
+                Click="TrailBurgerButton_Click">
+            </Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
@@ -43,10 +55,40 @@
                 Content="Baked Beans"
                 Click="BakedBeansButton_Click">
             </Button>
+            <Button x:Name="ChiliCheeseFriesButton" Height="30"
+                Content="Chili Cheese Fries"
+                Click="ChiliCheeseFriesButton_Click">
+            </Button>
+            <Button x:Name="CornDodgersButton" Height="30"
+                Content="Corn Dodgers"
+                Click="CornDodgersButton_Click">
+            </Button>
+            <Button x:Name="PanDeCampoButton" Height="30"
+                Content="Pan de Campo"
+                Click="PanDeCampoButton_Click">
+            </Button>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
-            
+            <Label Content="Drinks"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+            <Button x:Name="CowboyCoffeeButton" Height="30"
+                Content="Cowboy Coffee"
+                Click="CowboyCoffeeButton_Click">
+            </Button>
+            <Button x:Name="JerkedSodaButton" Height="30"
+                Content="Jerked Soda"
+                Click="JerkedSodaButton_Click">
+            </Button>
+            <Button x:Name="TexasTeaButton" Height="30"
+                Content="Texas Tea"
+                Click="TexasTeaButton_Click">
+            </Button>
+            <Button x:Name="WaterButton" Height="30"
+                Content="Water"
+                Click="WaterButton_Click">
+            </Button>
         </StackPanel>
 
         <StackPanel Grid.Column="3">

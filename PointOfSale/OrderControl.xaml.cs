@@ -52,5 +52,65 @@ namespace PointOfSale
             BakedBeans temp = new BakedBeans();
             OrderBox.Items.Add(temp);
         }
+
+        private void RustlersRibsButton_Click(object sender, RoutedEventArgs e)
+        {
+            RustlersRibs temp = new RustlersRibs();
+            OrderBox.Items.Add(temp);
+        }
+
+        private void TexasTripleBurgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            TexasTripleBurger temp = new TexasTripleBurger();
+            OrderBox.Items.Add(temp);
+        }
+
+        private void TrailBurgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            TrailBurger temp = new TrailBurger();
+            OrderBox.Items.Add(temp);
+        }
+
+        private void ChiliCheeseFriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            ChiliCheeseFries temp = new ChiliCheeseFries();
+            OrderBox.Items.Add(temp);
+        }
+
+        private void CornDodgersButton_Click(object sender, RoutedEventArgs e)
+        {
+            CornDodgers temp = new CornDodgers();
+            OrderBox.Items.Add(temp);
+        }
+
+        private void PanDeCampoButton_Click(object sender, RoutedEventArgs e)
+        {
+            PanDeCampo temp = new PanDeCampo();
+            OrderBox.Items.Add(temp);
+        }
+
+        private void CowboyCoffeeButton_Click(object sender, RoutedEventArgs e)
+        {
+            CowboyCoffee temp = new CowboyCoffee();
+            OrderBox.Items.Add(temp);
+        }
+
+        private void JerkedSodaButton_Click(object sender, RoutedEventArgs e)
+        {
+            JerkedSoda temp = new JerkedSoda();
+            OrderBox.Items.Add(temp);
+        }
+
+        private void TexasTeaButton_Click(object sender, RoutedEventArgs e)
+        {
+            TexasTea temp = new TexasTea();
+            OrderBox.Items.Add(temp);
+        }
+
+        private void WaterButton_Click(object sender, RoutedEventArgs e)
+        {
+            Water temp = new Water();
+            OrderBox.Items.Add(temp);
+        }
     }
 }
