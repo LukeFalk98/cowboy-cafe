@@ -96,5 +96,18 @@ namespace CowboyCafe.Data
                 return inst;
             }
         }
+
+        /// <summary>
+        /// Returns the object as a string
+        /// </summary>
+        /// <returns>'Size' Texas 'Type' Tea</returns>
+        public override string ToString()
+        {
+            if (Sweet)
+            {
+                return ($"{Size} Texas Sweet Tea");
+            }
+            return ($"{Size} Texas Plain Tea");
+        }
     }
 }

@@ -83,10 +83,23 @@ namespace CowboyCafe.Data
 
                 if (Ice) instructions.Add("Add Ice");
                 if (Decaf) instructions.Add("Decaf");
-                if (RoomForCream) instructions.Add("Room For Cream");
+                if (RoomForCream) instructions.Add("Room for Cream");
 
                 return instructions;
             }
+        }
+
+        /// <summary>
+        /// Returns the object as a string
+        /// </summary>
+        /// <returns>'Size' 'Decaf' Cowboy Coffee</returns>
+        public override string ToString()
+        {
+            if (Decaf)
+            {
+                return ($"{Size} Decaf Cowboy Coffee");
+            }
+            return ($"{Size} Cowboy Coffee");
         }
     }
 }

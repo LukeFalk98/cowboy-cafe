@@ -30,7 +30,7 @@
                 Click="DakotaDoubleBurgerButton_Click">
             </Button>
             <Button x:Name="PecosPulledPorkButton" Height="30"
-                Content="Peco's Pulled Pork"
+                Content="Pecos Pulled Pork"
                 Click="PecosPulledPorkButton_Click">
             </Button>
             <Button x:Name="RustlersRibsButton" Height="30"

@@ -60,7 +60,7 @@ namespace CowboyCafe.Data
         /// <returns>"Corn Dodgers"</returns>
         public override string ToString()
         {
-            return "Corn Dodgers";
+            return ($"{Size} Corn Dodgers");
         }
     }
 }

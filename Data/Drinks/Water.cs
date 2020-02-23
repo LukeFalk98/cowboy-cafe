@@ -54,5 +54,14 @@ namespace CowboyCafe.Data
                 return inst;
             }
         }
+
+        /// <summary>
+        /// Returns the object as a string
+        /// </summary>
+        /// <returns>'Size' Water</returns>
+        public override string ToString()
+        {
+            return ($"{Size} Water");
+        }
     }
 }
