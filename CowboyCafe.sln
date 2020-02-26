@@ -14,10 +14,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{F3E6B1AD-4116-4443-A685-3974A9CD7EB8}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Downloads\Cowboy Cafe UML.pdf = ..\..\..\..\Downloads\Cowboy Cafe UML.pdf
+		Documentation\Cowboy Cafe UML.pdf = Documentation\Cowboy Cafe UML.pdf
+		Documentation\Point of Sale UML.pdf = Documentation\Point of Sale UML.pdf
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{EF8CC91A-685C-486F-818B-685C22896373}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{EF8CC91A-685C-486F-818B-685C22896373}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
