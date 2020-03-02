@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="PointOfSale.MenuItemSelectionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Label Content="Entrees"
+                   FontWeight="Bold"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+            <Button x:Name="AngryChickenButton" Height="50"
+                Content="Angry Chicken"
+                FontSize="15"
+                Click="AngryChicken_Click">
+            </Button>
+            <Button x:Name="CowpokeChiliButton" Height="50"
+                Content="Cowpoke Chili"
+                FontSize="15"
+                Click="CowpokeChiliButton_Click">
+            </Button>
+            <Button x:Name="DakotaDoubleBurgerButton" Height="50"
+                Content="Dakota Double Burger"
+                FontSize="15"
+                Click="DakotaDoubleBurgerButton_Click">
+            </Button>
+            <Button x:Name="PecosPulledPorkButton" Height="50"
+                Content="Pecos Pulled Pork"
+                FontSize="15"
+                Click="PecosPulledPorkButton_Click">
+            </Button>
+            <Button x:Name="RustlersRibsButton" Height="50"
+                Content="Rustler's Ribs"
+                FontSize="15"
+                Click="RustlersRibsButton_Click">
+            </Button>
+            <Button x:Name="TexasTripleBurgerButton" Height="50"
+                Content="Texas Triple Burger"
+                FontSize="15"
+                Click="TexasTripleBurgerButton_Click">
+            </Button>
+            <Button x:Name="TrailBurgerButton" Height="50"
+                Content="Trail Burger"
+                FontSize="15"
+                Click="TrailBurgerButton_Click">
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <Label Content="Sides"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+            <Button x:Name="BakedBeansButton" Height="50"
+                Content="Baked Beans"
+                FontSize="15"
+                Click="BakedBeansButton_Click">
+            </Button>
+            <Button x:Name="ChiliCheeseFriesButton" Height="50"
+                Content="Chili Cheese Fries"
+                FontSize="15"
+                Click="ChiliCheeseFriesButton_Click">
+            </Button>
+            <Button x:Name="CornDodgersButton" Height="50"
+                Content="Corn Dodgers"
+                FontSize="15"
+                Click="CornDodgersButton_Click">
+            </Button>
+            <Button x:Name="PanDeCampoButton" Height="50"
+                Content="Pan de Campo"
+                FontSize="15"
+                Click="PanDeCampoButton_Click">
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2">
+            <Label Content="Drinks"
+                   FontWeight="Bold"
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+            <Button x:Name="CowboyCoffeeButton" Height="50"
+                Content="Cowboy Coffee"
+                FontSize="15"
+                Click="CowboyCoffeeButton_Click">
+            </Button>
+            <Button x:Name="JerkedSodaButton" Height="50"
+                Content="Jerked Soda"
+                FontSize="15"
+                Click="JerkedSodaButton_Click">
+            </Button>
+            <Button x:Name="TexasTeaButton" Height="50"
+                Content="Texas Tea"
+                FontSize="15"
+                Click="TexasTeaButton_Click">
+            </Button>
+            <Button x:Name="WaterButton" Height="50"
+                Content="Water"
+                FontSize="15"
+                Click="WaterButton_Click">
+            </Button>
+        </StackPanel>
+            
+    </Grid>
+</UserControl>

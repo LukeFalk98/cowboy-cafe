@@ -10,93 +10,29 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
-            <Label Content="Entrees"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
-            <Button x:Name="AngryChickenButton" Height="30"
-                Content="Angry Chicken"
-                Click="AngryChicken_Click">
-            </Button>
-            <Button x:Name="CowpokeChiliButton" Height="30"
-                Content="Cowpoke Chili"
-                Click="CowpokeChiliButton_Click">
-            </Button>
-            <Button x:Name="DakotaDoubleBurgerButton" Height="30"
-                Content="Dakota Double Burger"
-                Click="DakotaDoubleBurgerButton_Click">
-            </Button>
-            <Button x:Name="PecosPulledPorkButton" Height="30"
-                Content="Pecos Pulled Pork"
-                Click="PecosPulledPorkButton_Click">
-            </Button>
-            <Button x:Name="RustlersRibsButton" Height="30"
-                Content="Rustler's Ribs"
-                Click="RustlersRibsButton_Click">
-            </Button>
-            <Button x:Name="TexasTripleBurgerButton" Height="30"
-                Content="Texas Triple Burger"
-                Click="TexasTripleBurgerButton_Click">
-            </Button>
-            <Button x:Name="TrailBurgerButton" Height="30"
-                Content="Trail Burger"
-                Click="TrailBurgerButton_Click">
-            </Button>
-        </StackPanel>
-
-        <StackPanel Grid.Column="1">
-            <Label Content="Sides"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
-            <Button x:Name="BakedBeansButton" Height="30"
-                Content="Baked Beans"
-                Click="BakedBeansButton_Click">
-            </Button>
-            <Button x:Name="ChiliCheeseFriesButton" Height="30"
-                Content="Chili Cheese Fries"
-                Click="ChiliCheeseFriesButton_Click">
-            </Button>
-            <Button x:Name="CornDodgersButton" Height="30"
-                Content="Corn Dodgers"
-                Click="CornDodgersButton_Click">
-            </Button>
-            <Button x:Name="PanDeCampoButton" Height="30"
-                Content="Pan de Campo"
-                Click="PanDeCampoButton_Click">
-            </Button>
-        </StackPanel>
-
-        <StackPanel Grid.Column="2">
-            <Label Content="Drinks"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
-            <Button x:Name="CowboyCoffeeButton" Height="30"
-                Content="Cowboy Coffee"
-                Click="CowboyCoffeeButton_Click">
-            </Button>
-            <Button x:Name="JerkedSodaButton" Height="30"
-                Content="Jerked Soda"
-                Click="JerkedSodaButton_Click">
-            </Button>
-            <Button x:Name="TexasTeaButton" Height="30"
-                Content="Texas Tea"
-                Click="TexasTeaButton_Click">
-            </Button>
-            <Button x:Name="WaterButton" Height="30"
-                Content="Water"
-                Click="WaterButton_Click">
-            </Button>
-        </StackPanel>
-
-        <StackPanel Grid.Column="3">
-            <Label Content="Current Order"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
-            <ListBox x:Name="OrderBox"/>
-        </StackPanel>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+            
+        <Button x:Name="ItemSelectButton"
+                Grid.Column="0"
+                Grid.Row="0"
+                Content="Item Selection"/>
+        <Button x:Name="CancelOrderButton"
+                Grid.Column="1"
+                Grid.Row="0"
+                Content="Cancel Order"/>
+        <Button x:Name="CompleteOrderButton"
+                Grid.Column="2"
+                Grid.Row="0"
+                Content="Complete Order"/>
+        <local:MenuItemSelectionControl Grid.Row="1" 
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"/>
+        <local:OrderSummaryControl Grid.Column="3"
+                                   Grid.Row="0"
+                                   Grid.RowSpan="2"/>
     </Grid>
 </UserControl>
