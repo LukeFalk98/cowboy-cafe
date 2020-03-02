@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// this class gives the basic properties all entrees have
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree : IOrderItem
     {
         /// <summary>
         /// this returns the price of the entree
