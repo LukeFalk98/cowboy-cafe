@@ -10,24 +10,29 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
             
         <Button x:Name="ItemSelectButton"
                 Grid.Column="0"
                 Grid.Row="0"
-                Content="Item Selection"/>
+                Content="Item Selection"
+                Click="ItemSelectButton_Click"/>
         <Button x:Name="CancelOrderButton"
                 Grid.Column="1"
                 Grid.Row="0"
-                Content="Cancel Order"/>
+                Content="Cancel Order"
+                Click="CancelOrderButton_Click"/>
         <Button x:Name="CompleteOrderButton"
                 Grid.Column="2"
                 Grid.Row="0"
-                Content="Complete Order"/>
+                Content="Complete Order"
+                Click="CompleteOrderButton_Click"/>
         <local:MenuItemSelectionControl Grid.Row="1" 
                                         Grid.Column="0"
                                         Grid.ColumnSpan="3"/>
