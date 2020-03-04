@@ -25,10 +25,34 @@
                    Text="{Binding Path=OrderNumber, StringFormat='Order {0}'}"/>
         <ListBox Grid.Row="1"
                  Grid.Column="0"
-                 ItemsSource="{Binding Path=Items}"/>
-        <ListBox Grid.Row="1"
-                 Grid.Column="1"
-                 ItemsSource="{Binding Path=Price, StringFormat=c}"/>
+                 Grid.ColumnSpan="2"
+                 HorizontalContentAlignment="Stretch"
+                 ItemsSource="{Binding Path=Items}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding}" 
+                                   Grid.Column="0"
+                                   Grid.Row="0"/>
+                        <TextBlock Text="{Binding Path=Price, StringFormat=c}"
+                                   TextAlignment="Right" 
+                                   Grid.Column="1"/>
+                        <ListView ItemsSource="{Binding Path=SpecialInstructions}"
+                                  Grid.Column="0"
+                                  Grid.ColumnSpan="2"
+                                  Grid.Row="1"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+        </ListBox>
         <TextBlock Text="Subtotal"
                    Grid.Column="0"
                    Grid.Row="2"/>

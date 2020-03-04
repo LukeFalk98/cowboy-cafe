@@ -60,7 +60,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// this gives the list of items
         /// </summary>
-        public IEnumerable<IOrderItem> Items { get => items; }
+        public IEnumerable<IOrderItem> Items { get => items.ToArray(); }
 
         /// <summary>
         /// this gives the current order
@@ -74,6 +74,7 @@ namespace CowboyCafe.Data
         public void Add(IOrderItem item) 
         { 
             items.Add(item);
+            if (item is INotifyPropertyChanged pcitem) { pcitem.PropertyChanged += OnItemChanged; }
             Price.Add(item.Price);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
@@ -87,10 +88,20 @@ namespace CowboyCafe.Data
         public void Remove(IOrderItem item) 
         { 
             items.Remove(item);
+            if (item is INotifyPropertyChanged pcitem)
+            {
+                pcitem.PropertyChanged -= OnItemChanged;
+            }
             Price.Remove(item.Price);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+        }
+
+        private void OnItemChanged(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            if (e.PropertyName == "Price") PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
     }
 }
