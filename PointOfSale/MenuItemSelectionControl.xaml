@@ -22,37 +22,37 @@
             <Button x:Name="AngryChickenButton" Height="50"
                 Content="Angry Chicken"
                 FontSize="15"
-                Click="AngryChicken_Click">
+                Click="MenuButton_Click">
             </Button>
             <Button x:Name="CowpokeChiliButton" Height="50"
                 Content="Cowpoke Chili"
                 FontSize="15"
-                Click="CowpokeChiliButton_Click">
+                Click="MenuButton_Click">
             </Button>
             <Button x:Name="DakotaDoubleBurgerButton" Height="50"
                 Content="Dakota Double Burger"
                 FontSize="15"
-                Click="DakotaDoubleBurgerButton_Click">
+                Click="MenuButton_Click">
             </Button>
             <Button x:Name="PecosPulledPorkButton" Height="50"
                 Content="Pecos Pulled Pork"
                 FontSize="15"
-                Click="PecosPulledPorkButton_Click">
+                Click="MenuButton_Click">
             </Button>
             <Button x:Name="RustlersRibsButton" Height="50"
                 Content="Rustler's Ribs"
                 FontSize="15"
-                Click="RustlersRibsButton_Click">
+                Click="MenuButton_Click">
             </Button>
             <Button x:Name="TexasTripleBurgerButton" Height="50"
                 Content="Texas Triple Burger"
                 FontSize="15"
-                Click="TexasTripleBurgerButton_Click">
+                Click="MenuButton_Click">
             </Button>
             <Button x:Name="TrailBurgerButton" Height="50"
                 Content="Trail Burger"
                 FontSize="15"
-                Click="TrailBurgerButton_Click">
+                Click="MenuButton_Click">
             </Button>
         </StackPanel>
 
@@ -65,7 +65,7 @@
             <Button x:Name="BakedBeansButton" Height="50"
                 Content="Baked Beans"
                 FontSize="15"
-                Click="BakedBeansButton_Click">
+                Click="MenuButton_Click">
             </Button>
             <Button x:Name="ChiliCheeseFriesButton" Height="50"
                 Content="Chili Cheese Fries"

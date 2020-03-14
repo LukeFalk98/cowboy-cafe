@@ -170,17 +170,72 @@ namespace PointOfSale
             {
                 if (sender is Button button)
                 {
-                    switch (button.Tag)
+                    switch (button.Content)
                     {
-                        case "CowpokeChili":
-                            var item = new CowpokeChili();
-                            var screen = new CowpokeChiliCustomization();
-                            screen.DataContext = item;
-                            order.Add(item);
-                            orderControl?.SwapScreen(screen);
+                        case "Cowpoke Chili":
+                            var chiliItem = new CowpokeChili();
+                            var chiliScreen = new CowpokeChiliCustomization();
+                            chiliScreen.DataContext = chiliItem;
+                            order.Add(chiliItem);
+                            orderControl?.SwapScreen(chiliScreen);
                             break;
-                        case "AngryChicken":
-                            
+                        case "Angry Chicken":
+                            var chickenItem = new AngryChicken();
+                            var chickenScreen = new AngryChickenCustomization();
+                            chickenScreen.DataContext = chickenItem;
+                            order.Add(chickenItem);
+                            orderControl?.SwapScreen(chickenScreen);
+                            break;
+                        case "Dakota Double Burger":
+                            var doubleItem = new DakotaDoubleBurger();
+                            var doubleScreen = new DakotaDoubleBurgerCustomization();
+                            doubleScreen.DataContext = doubleItem;
+                            order.Add(doubleItem);
+                            orderControl?.SwapScreen(doubleScreen);
+                            break;
+                        case "Pecos Pulled Pork":
+                            var pecosItem = new PecosPulledPork();
+                            var pecosScreen = new PecosPulledPorkCustomization();
+                            pecosScreen.DataContext = pecosItem;
+                            order.Add(pecosItem);
+                            orderControl?.SwapScreen(pecosScreen);
+                            break;
+                        case "Rustler's Ribs":
+                            var ribsItem = new RustlersRibs();
+                            var ribsScreen = new RustlersRibsCustomization();
+                            ribsScreen.DataContext = ribsItem;
+                            order.Add(ribsItem);
+                            orderControl?.SwapScreen(ribsScreen);
+                            break;
+                        case "Texas Triple Burger":
+                            var tripleItem = new TexasTripleBurger();
+                            var tripleScreen = new TexasTripleBurgerCustomization();
+                            tripleScreen.DataContext = tripleItem;
+                            order.Add(tripleItem);
+                            orderControl?.SwapScreen(tripleScreen);
+                            break;
+                        case "Trail Burger":
+                            var burgerItem = new TrailBurger();
+                            var burgerScreen = new TrailBurgerCustomization();
+                            burgerScreen.DataContext = burgerItem;
+                            order.Add(burgerItem);
+                            orderControl?.SwapScreen(burgerScreen);
+                            break;
+                        case "Baked Beans":
+                            var beansItem = new BakedBeans();
+                            var beansScreen = new SideCustomization();
+                            beansScreen.DataContext = beansItem;
+                            order.Add(beansItem);
+                            orderControl?.SwapScreen(beansScreen);
+                            break;
+                        case "Chili Cheese Fries":
+                        case "Corn Dodgers":
+                        case "Pan de Campo":
+                            break;
+                        case "Cowboy Coffee":
+                        case "Jerked Soda":
+                        case "Texas Tea":
+                        case "Water":
                             break;
                     }
                 }

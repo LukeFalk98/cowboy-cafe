@@ -4,14 +4,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// this class emulates the Pecos Pulled Pork entree
     /// </summary>
-    public class PecosPulledPork: Entree
+    public class PecosPulledPork: Entree, INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// basic constructor, initializes Price and Calories
         /// </summary>
@@ -27,8 +31,13 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Bread
         {
-            get { return bread; }
-            set { bread = value; }
+            get => bread;
+            set 
+            { 
+                bread = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         private bool pickle = true;
@@ -37,8 +46,13 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Pickle
         {
-            get { return pickle; }
-            set { pickle = value; }
+            get => pickle;
+            set
+            { 
+                pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         /// <summary>

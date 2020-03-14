@@ -4,14 +4,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// this class simulates the Rustler's Ribs entree
     /// </summary>
-    public class RustlersRibs: Entree
+    public class RustlersRibs: Entree, INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// basic constructor, initializes the Price and Calories
         /// </summary>
