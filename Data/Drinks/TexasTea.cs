@@ -4,23 +4,45 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// this emulates the Tea Drink
     /// </summary>
-    public class TexasTea: Drink
+    public class TexasTea: Drink, INotifyPropertyChanged
     {
+
+        private bool sweet = true;
         /// <summary>
         /// this is a bool whether or not the tea is sweet
         /// </summary>
-        public bool Sweet { get; set; } = true;
+        public bool Sweet
+        {
+            get => sweet;
+            set
+            {
+                sweet = value;
+                OnPropertyChanged(this, new PropertyChangedEventArgs("Sweet"));
+                OnPropertyChanged(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
 
+        private bool lemon;
         /// <summary>
         /// this is whether or not there is a lemon
         /// </summary>
-        public bool Lemon { get; set; }
+        public bool Lemon
+        {
+            get => lemon;
+            set
+            {
+                lemon = value;
+                OnPropertyChanged(this, new PropertyChangedEventArgs("Lemon"));
+                OnPropertyChanged(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// this returns the price of the drink based off size

@@ -15,30 +15,30 @@ using CowboyCafe.Data;
 namespace PointOfSale.CustomizationScreens
 {
     /// <summary>
-    /// Interaction logic for SideCustomization.xaml
+    /// Interaction logic for TexasTeaCustomization.xaml
     /// </summary>
-    public partial class SideCustomization : UserControl
+    public partial class TexasTeaCustomization : UserControl
     {
-        public SideCustomization()
+        public TexasTeaCustomization()
         {
             InitializeComponent();
         }
-
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            if (sender is RadioButton button) {
-                if (this.DataContext is Side side)
+            if (sender is RadioButton button)
+            {
+                if (this.DataContext is Drink drink)
                 {
                     switch (button.Name)
                     {
                         case "SmallSize":
-                            side.Size = CowboyCafe.Data.Size.Small;
+                            drink.Size = CowboyCafe.Data.Size.Small;
                             break;
                         case "MediumSize":
-                            side.Size = CowboyCafe.Data.Size.Medium;
+                            drink.Size = CowboyCafe.Data.Size.Medium;
                             break;
                         case "LargeSize":
-                            side.Size = CowboyCafe.Data.Size.Large;
+                            drink.Size = CowboyCafe.Data.Size.Large;
                             break;
                         default:
                             break;

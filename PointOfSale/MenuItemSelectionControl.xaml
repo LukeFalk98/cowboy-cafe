@@ -70,17 +70,17 @@
             <Button x:Name="ChiliCheeseFriesButton" Height="50"
                 Content="Chili Cheese Fries"
                 FontSize="15"
-                Click="ChiliCheeseFriesButton_Click">
+                Click="MenuButton_Click">
             </Button>
             <Button x:Name="CornDodgersButton" Height="50"
                 Content="Corn Dodgers"
                 FontSize="15"
-                Click="CornDodgersButton_Click">
+                Click="MenuButton_Click">
             </Button>
             <Button x:Name="PanDeCampoButton" Height="50"
                 Content="Pan de Campo"
                 FontSize="15"
-                Click="PanDeCampoButton_Click">
+                Click="MenuButton_Click">
             </Button>
         </StackPanel>
 
@@ -93,22 +93,22 @@
             <Button x:Name="CowboyCoffeeButton" Height="50"
                 Content="Cowboy Coffee"
                 FontSize="15"
-                Click="CowboyCoffeeButton_Click">
+                Click="MenuButton_Click">
             </Button>
             <Button x:Name="JerkedSodaButton" Height="50"
                 Content="Jerked Soda"
                 FontSize="15"
-                Click="JerkedSodaButton_Click">
+                Click="MenuButton_Click">
             </Button>
             <Button x:Name="TexasTeaButton" Height="50"
                 Content="Texas Tea"
                 FontSize="15"
-                Click="TexasTeaButton_Click">
+                Click="MenuButton_Click">
             </Button>
             <Button x:Name="WaterButton" Height="50"
                 Content="Water"
                 FontSize="15"
-                Click="WaterButton_Click">
+                Click="MenuButton_Click">
             </Button>
         </StackPanel>
             

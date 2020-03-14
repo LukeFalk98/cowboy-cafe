@@ -4,14 +4,16 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// this class emulates the water drink
     /// </summary>
-    public class Water: Drink
+    public class Water: Drink, INotifyPropertyChanged
     {
+
         /// <summary>
         /// this gives the price of water
         /// </summary>
@@ -34,10 +36,20 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool lemon = false;
         /// <summary>
         /// this states if there is a lemon for the drink
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get => lemon;
+            set
+            {
+                lemon = value;
+                OnPropertyChanged(this, new PropertyChangedEventArgs("Lemon"));
+                OnPropertyChanged(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// this gives special instructions for preparing the drink

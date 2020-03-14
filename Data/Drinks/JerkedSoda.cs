@@ -4,14 +4,16 @@
 
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// this class represents the Soda Drink
     /// </summary>
-    public class JerkedSoda : Drink
+    public class JerkedSoda : Drink, INotifyPropertyChanged
     {
+
         /// <summary>
         /// this returns the price based on size
         /// </summary>
@@ -54,10 +56,19 @@ namespace CowboyCafe.Data
             }
         }
 
+        private SodaFlavor flavor;
         /// <summary>
         /// this is the flavor of soda
         /// </summary>
-        public SodaFlavor Flavor { get; set; }
+        public SodaFlavor Flavor
+        {
+            get => flavor;
+            set
+            {
+                flavor = value;
+                OnPropertyChanged(this, new PropertyChangedEventArgs("Flavor"));
+            }
+        }
 
         /// <summary>
         /// this gives the instructions for serving

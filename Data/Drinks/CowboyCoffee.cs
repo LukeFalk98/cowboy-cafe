@@ -4,14 +4,16 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// this class emulates the Coffee drink
     /// </summary>
-    public class CowboyCoffee : Drink
+    public class CowboyCoffee : Drink, INotifyPropertyChanged
     {
+
         /// <summary>
         /// this constructer sets the Ice to false
         /// </summary>
@@ -62,15 +64,35 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool decaf = false;
         /// <summary>
         /// this is whether or not the coffee is decaf
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get => decaf;
+            set
+            {
+                decaf = value;
+                OnPropertyChanged(this, new PropertyChangedEventArgs("Decaf"));
+                OnPropertyChanged(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
+        private bool roomForCream = false;
         /// <summary>
         /// this is whether or not there should be room for cream
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get => roomForCream;
+            set
+            {
+                roomForCream = value;
+                OnPropertyChanged(this, new PropertyChangedEventArgs("RoomForCream"));
+                OnPropertyChanged(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// this returns a list of the instructions to prepare the coffee

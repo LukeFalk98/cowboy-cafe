@@ -12,16 +12,22 @@
             Customize this Side
         </TextBlock>
         <StackPanel>
-            <RadioButton GroupName="Size"
-                         IsChecked="{Binding Path=Size, Converter=}">
+            <RadioButton x:Name="SmallSize" 
+                         GroupName="Size"
+                         IsChecked="True"
+                         Checked="RadioButton_Checked">
                 Small
             </RadioButton>
-            <RadioButton GroupName="Size"
-                         IsChecked="{Binding Path=Size}">
+            <RadioButton x:Name="MediumSize" 
+                         GroupName="Size"
+                         IsChecked="False"
+                         Checked="RadioButton_Checked">
                 Medium
             </RadioButton>
-            <RadioButton GroupName="Size"
-                         IsChecked="{Binding Path=Size}">
+            <RadioButton x:Name="LargeSize"
+                         GroupName="Size"
+                         IsChecked="False"
+                         Checked="RadioButton_Checked">
                 Large
             </RadioButton>
         </StackPanel>
