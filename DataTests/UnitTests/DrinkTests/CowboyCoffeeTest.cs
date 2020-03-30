@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -122,6 +123,58 @@ namespace CowboyCafe.DataTests
             if (!ice && !roomForCream) Assert.Empty(coffee.SpecialInstructions);
             if (ice && !roomForCream || !ice && roomForCream) Assert.Single(coffee.SpecialInstructions);
             if (ice && roomForCream) Assert.Equal(2, coffee.SpecialInstructions.Count);
+        }
+
+        [Fact]
+        public void CowboyCoffeeImplementsINotifyPropertyCHanged()
+        {
+            var coffee = new CowboyCoffee();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(coffee);
+        }
+
+        [Theory]
+        [InlineData("Price")]
+        [InlineData("Size")]
+        [InlineData("Calories")]
+        public void ChangingSizeShouldInvokePropertyChanged(string property)
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, property, () => {
+                coffee.Size = Size.Medium;
+            });
+        }
+
+        [Theory]
+        [InlineData("Decaf")]
+        [InlineData("SpecialInstructions")]
+        public void ChangingDecafShouldInvokePropertyChanged(string property)
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, property, () => {
+                coffee.Decaf = true;
+            });
+        }
+
+        [Theory]
+        [InlineData("RoomForCream")]
+        [InlineData("SpecialInstructions")]
+        public void ChangingRoomForCreamShouldInvokePropertyChanged(string property)
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, property, () => {
+                coffee.RoomForCream = true;
+            });
+        }
+
+        [Theory]
+        [InlineData("Ice")]
+        [InlineData("SpecialInstructions")]
+        public void ChangingIceShouldInvokePropertyChanged(string property)
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, property, () => {
+                coffee.Ice = true;
+            });
         }
     }
 }

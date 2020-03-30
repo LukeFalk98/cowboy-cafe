@@ -19,9 +19,31 @@ namespace PointOfSale.CustomizationScreens
     /// </summary>
     public partial class TexasTeaCustomization : UserControl
     {
-        public TexasTeaCustomization()
+        public TexasTeaCustomization(TexasTea tea)
         {
             InitializeComponent();
+            this.DataContext = tea;
+            switch (tea.Size)
+            {
+                case CowboyCafe.Data.Size.Small:
+                    if (this.FindName("SmallSize") is RadioButton sbutton)
+                    {
+                        sbutton.IsChecked = true;
+                    }
+                    break;
+                case CowboyCafe.Data.Size.Medium:
+                    if (this.FindName("MediumSize") is RadioButton mbutton)
+                    {
+                        mbutton.IsChecked = true;
+                    }
+                    break;
+                case CowboyCafe.Data.Size.Large:
+                    if (this.FindName("LargeSize") is RadioButton lbutton)
+                    {
+                        lbutton.IsChecked = true;
+                    }
+                    break;
+            }
         }
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {

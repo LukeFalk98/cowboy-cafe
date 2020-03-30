@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -125,6 +126,58 @@ namespace CowboyCafe.DataTests
             if (ice && !lemon) Assert.Empty(tea.SpecialInstructions);
             if (ice && lemon || !ice && !lemon) Assert.Single(tea.SpecialInstructions);
             if (!ice && lemon) Assert.Equal(2, tea.SpecialInstructions.Count);
+        }
+
+        [Fact]
+        public void TexasTeaImplementsINotifyPropertyCHanged()
+        {
+            var tea = new TexasTea();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(tea);
+        }
+
+        [Theory]
+        [InlineData("Ice")]
+        [InlineData("SpecialInstructions")]
+        public void ChangingIceShouldInvokePropertyChanged(string property)
+        {
+            var tea = new TexasTea();
+            Assert.PropertyChanged(tea, property, () => {
+                tea.Ice = false;
+            });
+        }
+
+        [Theory]
+        [InlineData("Size")]
+        [InlineData("Calories")]
+        [InlineData("Price")]
+        public void ChangingSizeShouldInvokePropertyChanged(string property)
+        {
+            var tea = new TexasTea();
+            Assert.PropertyChanged(tea, property, () => {
+                tea.Size = Size.Medium;
+            });
+        }
+
+        [Theory]
+        [InlineData("Sweet")]
+        [InlineData("Calories")]
+        public void ChangingSweetShouldInvokePropertyChanged(string property)
+        {
+            var tea = new TexasTea();
+            Assert.PropertyChanged(tea, property, () => {
+                tea.Sweet = false;
+            });
+        }
+
+        [Theory]
+        [InlineData("Lemon")]
+        [InlineData("SpecialInstructions")]
+        public void ChangingLemonShouldInvokePropertyChanged(string property)
+        {
+            var tea = new TexasTea();
+            Assert.PropertyChanged(tea, property, () => {
+                tea.Lemon = true;
+            });
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -104,6 +105,44 @@ namespace CowboyCafe.DataTests
             if (ice && !lemon) Assert.Empty(water.SpecialInstructions);
             if (ice && lemon || !ice && !lemon) Assert.Single(water.SpecialInstructions);
             if (!ice && lemon) Assert.Equal(2, water.SpecialInstructions.Count);
+        }
+
+        [Fact]
+        public void WaterImplementsINotifyPropertyCHanged()
+        {
+            var water = new Water();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(water);
+        }
+
+        [Theory]
+        [InlineData("Ice")]
+        [InlineData("SpecialInstructions")]
+        public void ChangingIceShouldInvokePropertyChanged(string property)
+        {
+            var water = new Water();
+            Assert.PropertyChanged(water, property, () => {
+                water.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChanged()
+        {
+            var water = new Water();
+            Assert.PropertyChanged(water, "Size", () => {
+                water.Size = Size.Medium;
+            });
+        }
+
+        [Theory]
+        [InlineData("Lemon")]
+        [InlineData("SpecialInstructions")]
+        public void ChangingLemonShouldInvokePropertyChanged(string property)
+        {
+            var water = new Water();
+            Assert.PropertyChanged(water, property, () => {
+                water.Lemon = true;
+            });
         }
     }
 }

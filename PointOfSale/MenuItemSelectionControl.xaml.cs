@@ -86,57 +86,49 @@ namespace PointOfSale
                             break;
                         case "Baked Beans":
                             var beansItem = new BakedBeans();
-                            var beansScreen = new SideCustomization();
-                            beansScreen.DataContext = beansItem;
+                            var beansScreen = new SideCustomization(beansItem);
                             order.Add(beansItem);
                             orderControl?.SwapScreen(beansScreen);
                             break;
                         case "Chili Cheese Fries":
                             var friesItem = new ChiliCheeseFries();
-                            var friesScreen = new SideCustomization();
-                            friesScreen.DataContext = friesItem;
+                            var friesScreen = new SideCustomization(friesItem);
                             order.Add(friesItem);
                             orderControl?.SwapScreen(friesScreen);
                             break;
                         case "Corn Dodgers":
                             var cornItem = new CornDodgers();
-                            var cornScreen = new SideCustomization();
-                            cornScreen.DataContext = cornItem;
+                            var cornScreen = new SideCustomization(cornItem);
                             order.Add(cornItem);
                             orderControl?.SwapScreen(cornScreen);
                             break;
                         case "Pan de Campo":
                             var panItem = new PanDeCampo();
-                            var panScreen = new SideCustomization();
-                            panScreen.DataContext = panItem;
+                            var panScreen = new SideCustomization(panItem);
                             order.Add(panItem);
                             orderControl?.SwapScreen(panScreen);
                             break;
                         case "Cowboy Coffee":
                             var coffeeItem = new CowboyCoffee();
-                            var coffeeScreen = new CowboyCoffeeCustomization();
-                            coffeeScreen.DataContext = coffeeItem;
+                            var coffeeScreen = new CowboyCoffeeCustomization(coffeeItem);
                             order.Add(coffeeItem);
                             orderControl?.SwapScreen(coffeeScreen);
                             break;
                         case "Jerked Soda":
                             var sodaItem = new JerkedSoda();
-                            var sodaScreen = new JerkedSodaCustomization();
-                            sodaScreen.DataContext = sodaItem;
+                            var sodaScreen = new JerkedSodaCustomization(sodaItem);
                             order.Add(sodaItem);
                             orderControl?.SwapScreen(sodaScreen);
                             break;
                         case "Texas Tea":
                             var teaItem = new TexasTea();
-                            var teaScreen = new TexasTeaCustomization();
-                            teaScreen.DataContext = teaItem;
+                            var teaScreen = new TexasTeaCustomization(teaItem);
                             order.Add(teaItem);
                             orderControl?.SwapScreen(teaScreen);
                             break;
                         case "Water":
                             var waterItem = new Water();
-                            var waterScreen = new WaterCustomization();
-                            waterScreen.DataContext = waterItem;
+                            var waterScreen = new WaterCustomization(waterItem);
                             order.Add(waterItem);
                             orderControl?.SwapScreen(waterScreen);
                             break;

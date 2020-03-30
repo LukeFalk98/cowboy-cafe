@@ -23,17 +23,20 @@
                    TextAlignment="Center"
                    VerticalAlignment="Center"
                    Text="{Binding Path=OrderNumber, StringFormat='Order {0}'}"/>
-        <ListBox Grid.Row="1"
+        <ListBox x:Name="OrderList"
+                 Grid.Row="1"
                  Grid.Column="0"
                  Grid.ColumnSpan="2"
                  HorizontalContentAlignment="Stretch"
-                 ItemsSource="{Binding Path=Items}">
+                 ItemsSource="{Binding Path=Items}"
+                 SelectionChanged="OrderList_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -41,7 +44,8 @@
                         </Grid.RowDefinitions>
                         <TextBlock Text="{Binding}" 
                                    Grid.Column="0"
-                                   Grid.Row="0"/>
+                                   Grid.Row="0"
+                                   TextWrapping="Wrap"/>
                         <TextBlock Text="{Binding Path=Price, StringFormat=c}"
                                    TextAlignment="Right" 
                                    Grid.Column="1"/>
@@ -49,7 +53,17 @@
                                   Grid.Column="0"
                                   Grid.ColumnSpan="2"
                                   Grid.Row="1"/>
-                        </Grid>
+                        <Button Background="Red"
+                                Content="X"
+                                FontSize="12"
+                                HorizontalContentAlignment="Center"
+                                VerticalAlignment="Center"
+                                Width="30"
+                                Height="20"
+                                Foreground="White"
+                                Grid.Column="2"
+                                Click="Button_Click"/>
+                    </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
         </ListBox>
