@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="PointOfSale.BillControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="22" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillControl}}, Path=Denomination}"/>
+        <Button Content="+"
+                Click="OnIncreaseClicked"
+                Grid.Column="3"/>
+        <Button Content="-"
+                Click="OnDecreaseClicked"
+                Grid.Column="1"/>
+        <TextBlock Grid.Column="2" 
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillControl}}, Path=Quantity}"/>
+    </Grid>
+</UserControl>
