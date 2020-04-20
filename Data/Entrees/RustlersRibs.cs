@@ -44,5 +44,13 @@ namespace CowboyCafe.Data
         {
             return "Rustler's Ribs";
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public override string DisplayName
+        {
+            get => "Rustler's Ribs";
+        }
     }
 }

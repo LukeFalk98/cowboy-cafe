@@ -174,5 +174,13 @@ namespace CowboyCafe.Data
         {
             return "Dakota Double Burger";
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public override string DisplayName
+        {
+            get => "Dakota Double Burger";
+        }
     }
 }

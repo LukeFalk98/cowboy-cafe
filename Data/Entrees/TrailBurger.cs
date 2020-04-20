@@ -127,5 +127,13 @@ namespace CowboyCafe.Data
         {
             return "Trail Burger";
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public override string DisplayName
+        {
+            get => "Trail Burger";
+        }
     }
 }

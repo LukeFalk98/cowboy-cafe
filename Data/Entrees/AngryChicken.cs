@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using System.Dynamic;
 
 namespace CowboyCafe.Data
 {
@@ -76,6 +77,14 @@ namespace CowboyCafe.Data
         public override string ToString()
         {
             return "Angry Chicken";
+        }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public override string DisplayName
+        {
+            get => "Angry Chicken";
         }
     }
 }

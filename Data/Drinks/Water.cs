@@ -75,5 +75,13 @@ namespace CowboyCafe.Data
         {
             return ($"{Size} Water");
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public override string DisplayName
+        {
+            get => "Water";
+        }
     }
 }

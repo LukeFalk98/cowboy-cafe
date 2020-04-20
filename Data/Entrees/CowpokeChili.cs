@@ -105,6 +105,14 @@ namespace CowboyCafe.Data
         {
             return "Cowpoke Chili";
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public override string DisplayName
+        {
+            get => "Cowpoke Chili";
+        }
     }
 }
 

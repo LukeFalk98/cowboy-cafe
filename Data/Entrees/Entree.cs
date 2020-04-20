@@ -32,5 +32,10 @@ namespace CowboyCafe.Data
                 return new List<string>();
             }
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public abstract string DisplayName { get; }
     }
 }

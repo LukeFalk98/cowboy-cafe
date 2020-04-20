@@ -107,5 +107,13 @@ namespace CowboyCafe.Data
                     throw new NotImplementedException("Flavor Not Implemented");
             }
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public override string DisplayName
+        {
+            get => "Jerked Soda";
+        }
     }
 }

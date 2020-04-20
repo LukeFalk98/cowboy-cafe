@@ -62,5 +62,10 @@ namespace CowboyCafe.Data
         {
             return ($"{Size} Chili Cheese Fries");
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public override string DisplayName => "Chili Cheese Fries";
     }
 }

@@ -79,5 +79,13 @@ namespace CowboyCafe.Data
         {
             return "Pecos Pulled Pork";
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public override string DisplayName
+        {
+            get => "Pecos Pulled Pork";
+        }
     }
 }

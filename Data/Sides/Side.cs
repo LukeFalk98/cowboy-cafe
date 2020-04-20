@@ -43,5 +43,10 @@ namespace CowboyCafe.Data
         /// gives empty list for special instructions
         /// </summary>
         public virtual List<string> SpecialInstructions { get => new List<string>(); }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public abstract string DisplayName { get; }
     }
 }

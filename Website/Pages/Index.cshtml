@@ -1,0 +1,76 @@
+﻿@page
+@using CowboyCafe.Data
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Cowboy Cafe</h1>
+
+<p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and slake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
+
+<h2>Entrees</h2>
+
+<ul>
+    @foreach (Entree item in Menu.Entrees())
+    {
+        <li>
+            <div class="menu-item">
+                <h3>@item.DisplayName</h3>
+                <div class="info">
+                    <p class="calories">@item.Calories Calories</p>
+                    <p class="price">@(item.Price.ToString("C", System.Globalization.CultureInfo.CurrentCulture))</p>
+                </div>
+                <hr/>
+            </div>
+        </li>
+    }
+</ul>
+
+<h2>Sides</h2>
+
+<ul>
+    @foreach (Side item in Menu.Sides())
+    {
+        <li>
+            <div class="menu-item">
+                <h3>@item.DisplayName</h3>
+                @for (int i = 0; i < 3; i++)
+                {
+                    <div class="info">
+                        <div class="size-calorie">
+                            <p>@(item.Size=(Size)i), <i>@item.Calories Calories</i></p>
+                        </div>
+                        <div class="price">
+                            <p>@(item.Price.ToString("C", System.Globalization.CultureInfo.CurrentCulture))</p>
+                        </div>
+                    </div>
+                    <hr/>
+                }
+            </div>
+        </li>
+    }
+</ul>
+
+<h2>Beverages</h2>
+
+<ul>
+    @foreach (Drink item in Menu.Drinks())
+    {
+        <li>
+            <div class="menu-item">
+                <h3>@item.DisplayName</h3>
+                @for (int i = 0; i < 3; i++)
+                {
+                    <div class="info">
+                        <div class="size-calorie">
+                            <p>@(item.Size = (Size)i), <i>@item.Calories Calories</i></p>
+                        </div>
+                        <p class="price">@(item.Price.ToString("C", System.Globalization.CultureInfo.CurrentCulture))</p>
+                    </div>
+                    <hr />
+                }
+            </div>
+        </li>
+    }
+</ul>

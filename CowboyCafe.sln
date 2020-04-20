@@ -16,9 +16,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 	ProjectSection(SolutionItems) = preProject
 		Documentation\Cowboy Cafe UML.pdf = Documentation\Cowboy Cafe UML.pdf
 		Documentation\Point of Sale UML.pdf = Documentation\Point of Sale UML.pdf
+		Documentation\Website UML.pdf = Documentation\Website UML.pdf
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{EF8CC91A-685C-486F-818B-685C22896373}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website", "Website\Website.csproj", "{B06DDDD3-9ACF-4ECB-98FC-704658EF862A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +41,10 @@ Global
 		{EF8CC91A-685C-486F-818B-685C22896373}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF8CC91A-685C-486F-818B-685C22896373}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF8CC91A-685C-486F-818B-685C22896373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B06DDDD3-9ACF-4ECB-98FC-704658EF862A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B06DDDD3-9ACF-4ECB-98FC-704658EF862A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B06DDDD3-9ACF-4ECB-98FC-704658EF862A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B06DDDD3-9ACF-4ECB-98FC-704658EF862A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

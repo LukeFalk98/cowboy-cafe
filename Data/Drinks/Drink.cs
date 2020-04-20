@@ -71,5 +71,10 @@ namespace CowboyCafe.Data
         {
             PropertyChanged?.Invoke(sender, e);
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public abstract string DisplayName { get; }
     }
 }

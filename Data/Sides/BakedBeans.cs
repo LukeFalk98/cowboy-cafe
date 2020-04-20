@@ -62,5 +62,13 @@ namespace CowboyCafe.Data
         {
             return ($"{Size} Baked Beans");
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public override string DisplayName
+        {
+            get => "Baked Beans";
+        }
     }
 }

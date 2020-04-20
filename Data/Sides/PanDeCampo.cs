@@ -62,5 +62,10 @@ namespace CowboyCafe.Data
         {
             return ($"{Size} Pan de Campo");
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public override string DisplayName => "Pan de Campo";
     }
 }

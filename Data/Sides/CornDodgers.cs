@@ -62,5 +62,10 @@ namespace CowboyCafe.Data
         {
             return ($"{Size} Corn Dodgers");
         }
+
+        /// <summary>
+        /// gives the standard name of item
+        /// </summary>
+        public override string DisplayName => "Corn Dodgers";
     }
 }
