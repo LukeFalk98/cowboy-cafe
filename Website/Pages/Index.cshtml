@@ -5,72 +5,126 @@
     ViewData["Title"] = "Home page";
 }
 
-<h1>Cowboy Cafe</h1>
+<form id="item-database">
 
-<p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and slake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
+    <div id="search">
+        <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+        <input type="submit" value="Search" />
+    </div>
 
-<h2>Entrees</h2>
+    <div id="filters">
 
-<ul>
-    @foreach (Entree item in Menu.Entrees())
-    {
-        <li>
-            <div class="menu-item">
-                <h3>@item.DisplayName</h3>
-                <div class="info">
-                    <p class="calories">@item.Calories Calories</p>
-                    <p class="price">@(item.Price.ToString("C", System.Globalization.CultureInfo.CurrentCulture))</p>
-                </div>
-                <hr/>
-            </div>
-        </li>
-    }
-</ul>
+        <h4>Item Types</h4>
+        <label>
+            <input type="checkbox" name="ItemTypes" value="Entree" checked="@Model.ItemTypes?.Contains("Entree")" />
+            Entree
+        </label>
+        <label>
+            <input type="checkbox" name="ItemTypes" value="Side" checked="@Model.ItemTypes?.Contains("Side")" />
+            Side
+        </label>
+        <label>
+            <input type="checkbox" name="ItemTypes" value="Drink" checked="@Model.ItemTypes?.Contains("Drink")" />
+            Drink
+        </label>
 
-<h2>Sides</h2>
+        <h4>Calories</h4>
+        <div>
+            <input name="CalorieMin" type="number" min="0" step="1" placeholder="min" value="@Model.CalorieMin"/>
+            and
+            <input name="CalorieMax" type="number" min="0" step="1" placeholder="max" value="@Model.CalorieMax"/>
+        </div>
 
-<ul>
-    @foreach (Side item in Menu.Sides())
-    {
-        <li>
-            <div class="menu-item">
-                <h3>@item.DisplayName</h3>
-                @for (int i = 0; i < 3; i++)
+        <h4>Price</h4>
+        <div>
+            <input name="PriceMin" type="number" min="0" step=".01" placeholder="min" value="@Model.PriceMin"/>
+            and
+            <input name="PriceMax" type="number" min="0" step=".01" placeholder="max" value="@Model.PriceMax"/>
+        </div>
+
+    </div>
+
+    <div id="results">
+
+        <div id="title">
+            <h1>Cowboy Cafe</h1>
+            <p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and slake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
+        </div>
+
+        <div id="entrees">
+            <h2>Entrees</h2>
+
+            <ul>
+                @foreach (IOrderItem orderItem in Model.Items)
                 {
-                    <div class="info">
-                        <div class="size-calorie">
-                            <p>@(item.Size=(Size)i), <i>@item.Calories Calories</i></p>
-                        </div>
-                        <div class="price">
-                            <p>@(item.Price.ToString("C", System.Globalization.CultureInfo.CurrentCulture))</p>
-                        </div>
-                    </div>
-                    <hr/>
+                    @if (orderItem is Entree item)
+                    {
+                        <li>
+                            <div class="menu-item">
+                                <h3>@item.DisplayName</h3>
+                                <div class="info">
+                                    <p class="calories">@item.Calories Calories</p>
+                                    <p class="price">@(item.Price.ToString("C", System.Globalization.CultureInfo.CurrentCulture))</p>
+                                </div>
+                                <hr/>
+                            </div>
+                        </li>
+                    }
                 }
-            </div>
-        </li>
-    }
-</ul>
+            </ul>
+        </div>
 
-<h2>Beverages</h2>
+        <div id="sides">
+            <h2>Sides</h2>
 
-<ul>
-    @foreach (Drink item in Menu.Drinks())
-    {
-        <li>
-            <div class="menu-item">
-                <h3>@item.DisplayName</h3>
-                @for (int i = 0; i < 3; i++)
+            <ul>
+                @foreach (IOrderItem orderItem in Model.Items)
                 {
-                    <div class="info">
-                        <div class="size-calorie">
-                            <p>@(item.Size = (Size)i), <i>@item.Calories Calories</i></p>
-                        </div>
-                        <p class="price">@(item.Price.ToString("C", System.Globalization.CultureInfo.CurrentCulture))</p>
-                    </div>
-                    <hr />
+                    @if (orderItem is Side item)
+                    {
+                        <li>
+                            <div class="menu-item">
+                                <h3>@item.DisplayName</h3>
+                                <div class="info">
+                                    <div class="size-calorie">
+                                        <p>@item.Size, <i>@item.Calories Calories</i></p>
+                                    </div>
+                                    <div class="price">
+                                        <p>@(item.Price.ToString("C", System.Globalization.CultureInfo.CurrentCulture))</p>
+                                    </div>
+                                </div>
+                                <hr/>
+                            </div>
+                        </li>
+                    }
                 }
-            </div>
-        </li>
-    }
-</ul>
+            </ul>
+        </div>
+
+        <div id="drinks">
+            <h2>Beverages</h2>
+
+            <ul>
+                @foreach (IOrderItem orderItem in Model.Items)
+                {
+                    @if (orderItem is Drink item)
+                    {
+                        <li>
+                            <div class="menu-item">
+                                <h3>@item.DisplayName</h3>
+                                <div class="info">
+                                    <div class="size-calorie">
+                                        <p>@item.Size, <i>@item.Calories Calories</i></p>
+                                    </div>
+                                    <p class="price">@(item.Price.ToString("C", System.Globalization.CultureInfo.CurrentCulture))</p>
+                                </div>
+                                <hr />
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+
+</form>

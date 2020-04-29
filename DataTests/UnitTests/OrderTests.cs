@@ -13,6 +13,10 @@ namespace CowboyCafe.DataTests
             public double Price { get; set; }
 
             public List<string> SpecialInstructions { get; set; } = new List<string>();
+
+            public string DisplayName => throw new NotImplementedException();
+
+            public uint Calories => throw new NotImplementedException();
         }
 
         [Fact]

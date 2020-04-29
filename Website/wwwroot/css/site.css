@@ -70,7 +70,43 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-/* Index styles */
+/* Index styles 
+-------------------------------------------------- */
+form#item-database {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 50px auto;
+}
+
+#search {
+    grid-column-start: 1;
+    text-align: center;
+}
+
+#filters {
+    display: flex;
+    flex-direction: column;
+}
+
+#filters input[type=number] {
+    width: 5rem;
+}
+
+#filters h4 {
+    margin-bottom: .2rem;
+}
+
+#results {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#types {
+    display: flex;
+    flex-direction: column;
+}
+
 ul.menu-item {
     border: 1px dotted lightgray;
 }
@@ -80,20 +116,8 @@ ul.menu-item > li {
     border-bottom: 1px solid darkgray;
 }
 
-.details {
-
-}
-
 .calories {
     font-style: italic;
-}
-
-.size-calorie {
-
-}
-
-.price {
-
 }
 
 .info {
