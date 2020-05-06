@@ -97,6 +97,21 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// gives an Enumerable list of all flavors in strings
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<string> SodaFlavors()
+        {
+            var flavors = new List<string>();
+            flavors.Add("Cream Soda");
+            flavors.Add("Orange Soda");
+            flavors.Add("Sarsparilla");
+            flavors.Add("Birch Beer");
+            flavors.Add("Root Beer");
+            return flavors;
+        }
+
+        /// <summary>
         /// Filters all order items via provided search terms
         /// </summary>
         /// <param name="terms">search terms</param>

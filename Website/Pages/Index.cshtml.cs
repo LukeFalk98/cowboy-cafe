@@ -6,6 +6,7 @@ using CowboyCafe.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.View;
 
 namespace Website.Pages
 {
@@ -68,10 +69,45 @@ namespace Website.Pages
             this.CalorieMax = CalorieMax;
             this.PriceMax = PriceMax;
             this.PriceMin = PriceMin;
-            Items = Menu.Search(SearchTerms);
-            Items = Menu.FilterByCategory(Items, ItemTypes);
-            Items = Menu.FilterByCalories(Items, CalorieMin, CalorieMax);
-            Items = Menu.FilterByPrice(Items, PriceMin, PriceMax);
+            Items = Menu.CompleteMenu();
+            if (SearchTerms != null)
+            {
+                Items = from item in Items
+                        where item.DisplayName.Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase)
+                        select item;
+            }
+            if (ItemTypes != null && ItemTypes.Length != 0)
+            {
+                Items = Items.Where(item =>
+                    (item is Entree && ItemTypes.Contains("Entree")) ||
+                    (item is Side && ItemTypes.Contains("Side")) ||
+                    (item is Drink && ItemTypes.Contains("Drink"))
+                    );
+            }
+            if (CalorieMin != null)
+            {
+                Items = Items.Where(item =>
+                    CalorieMin <= item.Calories
+                    );
+            }
+            if (CalorieMax != null)
+            {
+                Items = Items.Where(item =>
+                    item.Calories <= CalorieMax
+                    );
+            }
+            if (PriceMax != null)
+            {
+                Items = Items.Where(item =>
+                    item.Price <= PriceMax
+                    );
+            }
+            if (PriceMin != null)
+            {
+                Items = Items.Where(item =>
+                    PriceMin <= item.Price
+                    );
+            }
         }
     }
 }
